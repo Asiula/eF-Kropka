@@ -1,0 +1,68 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/uikit.min.css', 98) %}
+        {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/uikit.min.js') %}
+        {% do assets.addJS('theme://js/uikit-icons.min.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+loremfhbnijnion
+{% block header %}
+        <div class="header uk-background-primary wrapper">
+            <div class="logo-wrapper">
+            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+                <div class="logo">
+                    <img alt="logo eF Kropka" src="{{url('theme://images/logo_FB_feed.png')}}" id="eflogo"/>
+                    </div>
+                {{ config.site.title }}
+            </a>
+            </div>
+            {% block header_navigation %}
+                <div class="nav-wrapper">
+                    {% include 'partials/navigation.html.twig' %}
+                    </div>
+            {% endblock %}
+        </div>
+{% endblock %}
+
+{% block body %}
+    <section id="body" class="uk-section">
+        <div class="wrapper padding uk-container">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+    <div class="footer text-center">
+        <div class="wrapper padding">
+            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+        </div>
+    </div>
+{% endblock %}
+
+</body>
+</html>
