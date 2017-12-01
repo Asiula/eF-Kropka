@@ -1,0 +1,19 @@
+.home-main{
+    width: 100%;
+}
+.home-aside{
+    width: 35%;
+}
+.home-section{
+    width: 65%;
+    padding: 5%;
+}
+.facebook-post{
+    display:flex;
+    flex-direction: column;
+}
+#facebook-posts{
+    display:flex;
+    flex-direction: column;
+}
+

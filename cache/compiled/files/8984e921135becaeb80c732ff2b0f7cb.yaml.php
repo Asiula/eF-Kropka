@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/srv/http/grav/user/config/system.yaml',
-    'modified' => 1511535884,
+    'modified' => 1511874991,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -31,7 +31,7 @@ return [
             'hide_in_urls' => false
         ],
         'pages' => [
-            'theme' => 'antimatter',
+            'theme' => 'e-f-kropka',
             'order' => [
                 'by' => 'default',
                 'dir' => 'asc'
@@ -146,7 +146,7 @@ return [
             'log' => true
         ],
         'debugger' => [
-            'enabled' => true,
+            'enabled' => false,
             'shutdown' => [
                 'close_connection' => true
             ],

@@ -1,13 +1,25 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1511539711,
-    'checksum' => '7439b2bc83a78d441ddd0920c6b7f7af',
+    'timestamp' => 1511886819,
+    'checksum' => '5cc6275253df0bb380f72c7c3c523bd9',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1511281125
+            ],
+            'plugins/facebook' => [
+                'file' => 'user/config/plugins/facebook.yaml',
+                'modified' => 1511878030
+            ],
+            'plugins/language-selector' => [
+                'file' => 'user/config/plugins/language-selector.yaml',
+                'modified' => 1511886819
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/config/plugins/simplesearch.yaml',
+                'modified' => 1511794369
             ],
             'plugins/topicmenu' => [
                 'file' => 'user/config/plugins/topicmenu.yaml',
@@ -27,7 +39,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1511539711
+                'modified' => 1511874991
             ]
         ],
         'system/config' => [
@@ -85,13 +97,17 @@ return [
                 'file' => 'user/plugins/language-selector/language-selector.yaml',
                 'modified' => 1511444420
             ],
-            'plugins/simplesearch' => [
-                'file' => 'user/plugins/simplesearch/simplesearch.yaml',
-                'modified' => 1511454147
-            ],
             'plugins/facebook' => [
                 'file' => 'user/plugins/facebook/facebook.yaml',
                 'modified' => 1511534665
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/plugins/simplesearch/simplesearch.yaml',
+                'modified' => 1511793787
+            ],
+            'plugins/social-feed' => [
+                'file' => 'user/plugins/social-feed/social-feed.yaml',
+                'modified' => 1511874991
             ]
         ]
     ],
@@ -265,10 +281,34 @@ return [
             ],
             'language-selector' => [
                 'enabled' => true,
-                'built_in_css' => true,
+                'built_in_css' => false,
                 'untranslated_pages_behavior' => 'none',
-                'button_display' => 'default',
+                'button_display' => 'name',
                 'select_display' => 'default'
+            ],
+            'facebook' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'use_unitegallery_plugin' => true,
+                'facebook_page_settings' => [
+                    'section_title' => 'News',
+                    'page_name' => 'eF Kropka',
+                    'page_id' => '399188573480541',
+                    'date_format' => 'd.m.Y - H:i',
+                    'count' => 1
+                ],
+                'facebook_event_settings' => [
+                    'show_cover' => true,
+                    'count' => 7
+                ],
+                'facebook_album_settings' => [
+                    'use_unitegallery' => false,
+                    'unitegallery_theme' => 'default'
+                ],
+                'facebook_common_settings' => [
+                    'application_id' => '539597739724105',
+                    'application_secret' => '68fabcee884f416ce054006da3be6424'
+                ]
             ],
             'simplesearch' => [
                 'enabled' => true,
@@ -288,10 +328,8 @@ return [
                     'dir' => 'desc'
                 ]
             ],
-            'facebook' => [
-                'enabled' => true,
-                'built_in_css' => true,
-                'use_unitegallery_plugin' => true
+            'social-feed' => [
+                'enabled' => true
             ],
             'topicmenu' => [
                 'enabled' => false,

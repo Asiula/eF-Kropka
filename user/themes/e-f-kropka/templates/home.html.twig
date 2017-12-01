@@ -1,0 +1,23 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <main class="uk-flex-row uk-flex home-main">
+    <section class="uk-flex home-section uk-flex-column">
+    {{ page.content }}
+</section>
+    <aside class="uk-flex-column uk-flex home-aside">
+        <div class="aside-top uk-flex uk-flex-column">
+            <h1> WESPRZYJ NAS - FINANSUJĄC STAŻ</h1>
+            <h3>Fundacja eF kropka</h3>
+            <p>
+                Nr konta: 69203000451110000003721820 <br/>
+                KRS: 0000382481 <br/>
+                ....albo zostań wolontariuszem
+                </p>
+</div>
+        <div class="aside-bot uk-flex uk-flex-column">
+{{ facebook_posts() }}
+</div>
+    </aside>
+    </main>
+{% endblock %}

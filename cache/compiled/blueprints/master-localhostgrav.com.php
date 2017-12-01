@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1511536210,
-    'checksum' => '6cf3ef54fd310ef2e286a446391e6776',
+    'timestamp' => 1511875189,
+    'checksum' => '53b5c02697d8d052c33afbd7bf0bb945',
     'files' => [
         'user/plugins/admin/blueprints/config' => [
             'media' => [
@@ -65,13 +65,17 @@ return [
                 'file' => 'user/plugins/language-selector/blueprints.yaml',
                 'modified' => 1511444420
             ],
-            'plugins/simplesearch' => [
-                'file' => 'user/plugins/simplesearch/blueprints.yaml',
-                'modified' => 1511444598
-            ],
             'plugins/facebook' => [
                 'file' => 'user/plugins/facebook/blueprints.yaml',
                 'modified' => 1511534665
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/plugins/simplesearch/blueprints.yaml',
+                'modified' => 1511793658
+            ],
+            'plugins/social-feed' => [
+                'file' => 'user/plugins/social-feed/blueprints.yaml',
+                'modified' => 1511874991
             ]
         ]
     ],
@@ -3242,171 +3246,6 @@ return [
                 'name' => 'plugins.language-selector.select_display',
                 'validation' => 'strict'
             ],
-            'plugins.simplesearch' => [
-                'type' => '_root',
-                'form_field' => false,
-                'form' => [
-                    'validation' => 'strict'
-                ]
-            ],
-            'plugins.simplesearch.enabled' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
-                'highlight' => 1,
-                'default' => 0,
-                'options' => [
-                    1 => 'PLUGIN_ADMIN.ENABLED',
-                    0 => 'PLUGIN_ADMIN.DISABLED'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'plugins.simplesearch.enabled',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.search_content' => [
-                'type' => 'select',
-                'size' => 'medium',
-                'classes' => 'fancy',
-                'label' => 'Search Content',
-                'default' => 'rendered',
-                'options' => [
-                    'rendered' => 'Rendered Content (Slower)',
-                    'raw' => 'Raw Markdown Content (Faster)'
-                ],
-                'name' => 'plugins.simplesearch.search_content',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.built_in_css' => [
-                'type' => 'toggle',
-                'label' => 'Use built in CSS',
-                'highlight' => 1,
-                'default' => 1,
-                'options' => [
-                    1 => 'PLUGIN_ADMIN.ENABLED',
-                    0 => 'PLUGIN_ADMIN.DISABLED'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'plugins.simplesearch.built_in_css',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.display_button' => [
-                'type' => 'toggle',
-                'label' => 'Display Search Button',
-                'highlight' => 0,
-                'default' => 0,
-                'options' => [
-                    1 => 'Enabled',
-                    0 => 'Disabled'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'plugins.simplesearch.display_button',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.ignore_accented_characters' => [
-                'type' => 'toggle',
-                'label' => 'Ignore accented characters',
-                'highlight' => 0,
-                'default' => 0,
-                'options' => [
-                    1 => 'Enabled',
-                    0 => 'Disabled'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'plugins.simplesearch.ignore_accented_characters',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.min_query_length' => [
-                'type' => 'text',
-                'size' => 'x-small',
-                'label' => 'Minimum query length',
-                'validate' => [
-                    'type' => 'number',
-                    'min' => 0
-                ],
-                'name' => 'plugins.simplesearch.min_query_length',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.route' => [
-                'type' => 'text',
-                'size' => 'medium',
-                'label' => 'Route',
-                'default' => '/random',
-                'name' => 'plugins.simplesearch.route',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.template' => [
-                'type' => 'text',
-                'size' => 'medium',
-                'label' => 'Template',
-                'default' => 'simplesearch_results',
-                'name' => 'plugins.simplesearch.template',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.filters' => [
-                'type' => '_parent',
-                'name' => 'plugins.simplesearch.filters',
-                'form_field' => false
-            ],
-            'plugins.simplesearch.filters.category' => [
-                'type' => 'selectize',
-                'label' => 'Category filter',
-                'validate' => [
-                    'type' => 'commalist'
-                ],
-                'name' => 'plugins.simplesearch.filters.category',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.filter_combinator' => [
-                'type' => 'select',
-                'size' => 'medium',
-                'classes' => 'fancy',
-                'label' => 'Filter Combinator',
-                'default' => 'and',
-                'options' => [
-                    'and' => 'And - Boolean &&',
-                    'or' => 'Or - Boolean ||'
-                ],
-                'name' => 'plugins.simplesearch.filter_combinator',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.order' => [
-                'type' => '_parent',
-                'name' => 'plugins.simplesearch.order',
-                'form_field' => false
-            ],
-            'plugins.simplesearch.order.by' => [
-                'type' => 'select',
-                'size' => 'long',
-                'classes' => 'fancy',
-                'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
-                'options' => [
-                    'default' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_DEFAULT',
-                    'folder' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_FOLDER',
-                    'title' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_TITLE',
-                    'date' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_DATE'
-                ],
-                'name' => 'plugins.simplesearch.order.by',
-                'validation' => 'strict'
-            ],
-            'plugins.simplesearch.order.dir' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_ADMIN.DEFAULT_ORDER_DIRECTION',
-                'highlight' => 'asc',
-                'default' => 'desc',
-                'options' => [
-                    'asc' => 'PLUGIN_ADMIN.ASCENDING',
-                    'desc' => 'PLUGIN_ADMIN.DESCENDING'
-                ],
-                'name' => 'plugins.simplesearch.order.dir',
-                'validation' => 'strict'
-            ],
             'plugins.facebook' => [
                 'type' => '_root',
                 'form_field' => false,
@@ -3651,6 +3490,283 @@ return [
                 ],
                 'name' => 'plugins.facebook.facebook_common_settings.application_secret',
                 'validation' => 'loose'
+            ],
+            'plugins.simplesearch' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.simplesearch.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.simplesearch.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.search_content' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'classes' => 'fancy',
+                'label' => 'Search Content',
+                'default' => 'rendered',
+                'options' => [
+                    'rendered' => 'Rendered Content (Slower)',
+                    'raw' => 'Raw Markdown Content (Faster)'
+                ],
+                'name' => 'plugins.simplesearch.search_content',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.simplesearch.built_in_css',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.display_button' => [
+                'type' => 'toggle',
+                'label' => 'Display Search Button',
+                'highlight' => 0,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.simplesearch.display_button',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.ignore_accented_characters' => [
+                'type' => 'toggle',
+                'label' => 'Ignore accented characters',
+                'highlight' => 0,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.simplesearch.ignore_accented_characters',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.min_query_length' => [
+                'type' => 'text',
+                'size' => 'x-small',
+                'label' => 'Minimum query length',
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 0
+                ],
+                'name' => 'plugins.simplesearch.min_query_length',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.route' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Route',
+                'default' => '/random',
+                'name' => 'plugins.simplesearch.route',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.template' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Template',
+                'default' => 'simplesearch_results',
+                'name' => 'plugins.simplesearch.template',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.filters' => [
+                'type' => '_parent',
+                'name' => 'plugins.simplesearch.filters',
+                'form_field' => false
+            ],
+            'plugins.simplesearch.filters.category' => [
+                'type' => 'selectize',
+                'label' => 'Category filter',
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.simplesearch.filters.category',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.filter_combinator' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'classes' => 'fancy',
+                'label' => 'Filter Combinator',
+                'default' => 'and',
+                'options' => [
+                    'and' => 'And - Boolean &&',
+                    'or' => 'Or - Boolean ||'
+                ],
+                'name' => 'plugins.simplesearch.filter_combinator',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.order' => [
+                'type' => '_parent',
+                'name' => 'plugins.simplesearch.order',
+                'form_field' => false
+            ],
+            'plugins.simplesearch.order.by' => [
+                'type' => 'select',
+                'size' => 'long',
+                'classes' => 'fancy',
+                'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
+                'options' => [
+                    'default' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_DEFAULT',
+                    'folder' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_FOLDER',
+                    'title' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_TITLE',
+                    'date' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_DATE'
+                ],
+                'name' => 'plugins.simplesearch.order.by',
+                'validation' => 'strict'
+            ],
+            'plugins.simplesearch.order.dir' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.DEFAULT_ORDER_DIRECTION',
+                'highlight' => 'asc',
+                'default' => 'desc',
+                'options' => [
+                    'asc' => 'PLUGIN_ADMIN.ASCENDING',
+                    'desc' => 'PLUGIN_ADMIN.DESCENDING'
+                ],
+                'name' => 'plugins.simplesearch.order.dir',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.social-feed.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.social-feed.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.twitter_consumer_key' => [
+                'type' => 'text',
+                'label' => 'Consumer key',
+                'name' => 'plugins.social-feed.twitter_consumer_key',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.twitter_consumer_secret' => [
+                'type' => 'text',
+                'label' => 'Consumer secret',
+                'name' => 'plugins.social-feed.twitter_consumer_secret',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.twitter_feeds' => [
+                'type' => 'list',
+                'label' => 'Accounts to follow',
+                'name' => 'plugins.social-feed.twitter_feeds',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.social-feed.twitter_feeds.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.social-feed.twitter_feeds.*',
+                'form_field' => false
+            ],
+            'plugins.social-feed.twitter_feeds.*.username' => [
+                'type' => 'text',
+                'label' => 'Username',
+                'name' => 'plugins.social-feed.twitter_feeds.*.username',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.facebook_app_id' => [
+                'type' => 'text',
+                'label' => 'App id',
+                'name' => 'plugins.social-feed.facebook_app_id',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.facebook_app_secret' => [
+                'type' => 'text',
+                'label' => 'App secret',
+                'name' => 'plugins.social-feed.facebook_app_secret',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.facebook_feeds' => [
+                'type' => 'list',
+                'label' => 'Accounts to follow',
+                'name' => 'plugins.social-feed.facebook_feeds',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.social-feed.facebook_feeds.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.social-feed.facebook_feeds.*',
+                'form_field' => false
+            ],
+            'plugins.social-feed.facebook_feeds.*.username' => [
+                'type' => 'text',
+                'label' => 'Username',
+                'name' => 'plugins.social-feed.facebook_feeds.*.username',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.instagram_client_id' => [
+                'type' => 'text',
+                'label' => 'Client id',
+                'name' => 'plugins.social-feed.instagram_client_id',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.instagram_access_token' => [
+                'type' => 'text',
+                'label' => 'Access token',
+                'name' => 'plugins.social-feed.instagram_access_token',
+                'validation' => 'strict'
+            ],
+            'plugins.social-feed.instagram_feeds' => [
+                'type' => 'list',
+                'label' => 'Accounts to follow',
+                'name' => 'plugins.social-feed.instagram_feeds',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.social-feed.instagram_feeds.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.social-feed.instagram_feeds.*',
+                'form_field' => false
+            ],
+            'plugins.social-feed.instagram_feeds.*.username' => [
+                'type' => 'text',
+                'label' => 'Username',
+                'name' => 'plugins.social-feed.instagram_feeds.*.username',
+                'validation' => 'strict'
             ]
         ],
         'rules' => [
@@ -4017,24 +4133,6 @@ return [
                     'button_display' => 'plugins.language-selector.button_display',
                     'select_display' => 'plugins.language-selector.select_display'
                 ],
-                'simplesearch' => [
-                    'enabled' => 'plugins.simplesearch.enabled',
-                    'search_content' => 'plugins.simplesearch.search_content',
-                    'built_in_css' => 'plugins.simplesearch.built_in_css',
-                    'display_button' => 'plugins.simplesearch.display_button',
-                    'ignore_accented_characters' => 'plugins.simplesearch.ignore_accented_characters',
-                    'min_query_length' => 'plugins.simplesearch.min_query_length',
-                    'route' => 'plugins.simplesearch.route',
-                    'template' => 'plugins.simplesearch.template',
-                    'filters' => [
-                        'category' => 'plugins.simplesearch.filters.category'
-                    ],
-                    'filter_combinator' => 'plugins.simplesearch.filter_combinator',
-                    'order' => [
-                        'by' => 'plugins.simplesearch.order.by',
-                        'dir' => 'plugins.simplesearch.order.dir'
-                    ]
-                ],
                 'facebook' => [
                     'enabled' => 'plugins.facebook.enabled',
                     'facebook_page_settings' => [
@@ -4061,6 +4159,48 @@ return [
                     'facebook_common_settings' => [
                         'application_id' => 'plugins.facebook.facebook_common_settings.application_id',
                         'application_secret' => 'plugins.facebook.facebook_common_settings.application_secret'
+                    ]
+                ],
+                'simplesearch' => [
+                    'enabled' => 'plugins.simplesearch.enabled',
+                    'search_content' => 'plugins.simplesearch.search_content',
+                    'built_in_css' => 'plugins.simplesearch.built_in_css',
+                    'display_button' => 'plugins.simplesearch.display_button',
+                    'ignore_accented_characters' => 'plugins.simplesearch.ignore_accented_characters',
+                    'min_query_length' => 'plugins.simplesearch.min_query_length',
+                    'route' => 'plugins.simplesearch.route',
+                    'template' => 'plugins.simplesearch.template',
+                    'filters' => [
+                        'category' => 'plugins.simplesearch.filters.category'
+                    ],
+                    'filter_combinator' => 'plugins.simplesearch.filter_combinator',
+                    'order' => [
+                        'by' => 'plugins.simplesearch.order.by',
+                        'dir' => 'plugins.simplesearch.order.dir'
+                    ]
+                ],
+                'social-feed' => [
+                    'enabled' => 'plugins.social-feed.enabled',
+                    'twitter_consumer_key' => 'plugins.social-feed.twitter_consumer_key',
+                    'twitter_consumer_secret' => 'plugins.social-feed.twitter_consumer_secret',
+                    'twitter_feeds' => [
+                        '*' => [
+                            'username' => 'plugins.social-feed.twitter_feeds.*.username'
+                        ]
+                    ],
+                    'facebook_app_id' => 'plugins.social-feed.facebook_app_id',
+                    'facebook_app_secret' => 'plugins.social-feed.facebook_app_secret',
+                    'facebook_feeds' => [
+                        '*' => [
+                            'username' => 'plugins.social-feed.facebook_feeds.*.username'
+                        ]
+                    ],
+                    'instagram_client_id' => 'plugins.social-feed.instagram_client_id',
+                    'instagram_access_token' => 'plugins.social-feed.instagram_access_token',
+                    'instagram_feeds' => [
+                        '*' => [
+                            'username' => 'plugins.social-feed.instagram_feeds.*.username'
+                        ]
                     ]
                 ]
             ]

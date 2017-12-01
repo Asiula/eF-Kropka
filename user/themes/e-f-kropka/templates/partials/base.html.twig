@@ -17,6 +17,7 @@
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
         {% do assets.addCss('theme://css/uikit.min.css', 98) %}
         {% do assets.addCss('theme://css/custom.css', 98) %}
+                {% do assets.addCss('theme://css/home.css', 98) %}
     {% endblock %}
     {{ assets.css() }}
 
@@ -30,17 +31,32 @@
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
-loremfhbnijnion
+
 {% block header %}
-        <div class="header uk-background-primary wrapper">
-            <div class="logo-wrapper">
+        <div class="header uk-background-primary uk-flex uk-flex-column uk-flex-center">
+            <div class="logo-wrapper uk-flex-row">
+                <div>
             <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
                 <div class="logo">
                     <img alt="logo eF Kropka" src="{{url('theme://images/logo_FB_feed.png')}}" id="eflogo"/>
-                    </div>
-                {{ config.site.title }}
+                </div>
             </a>
+            <h3 class=" white-text uk-margin-right">
+                {{ config.site.title }}
+            </h3>
             </div>
+
+            <div class="white-text uk-flex-bottom uk-flex-center" id="text"">
+                <p>
+                    Przeciwdziałamy stygmatyzacji osób po kryzysie psychicznym
+                </p>
+            </div>
+            <div class="uk-flex uk-flex-column" id="searchID">
+                <div class="search uk-flex-right">
+                {% include 'partials/simplesearch_searchbox.html.twig' %}
+            </div>
+            </div>
+                        </div>
             {% block header_navigation %}
                 <div class="nav-wrapper">
                     {% include 'partials/navigation.html.twig' %}
@@ -57,12 +73,18 @@ loremfhbnijnion
     </section>
 {% endblock %}
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+    <div class="footer uk-flex uk-flex-right uk-flex-middle">
+        <div class="white-text uk-flex-column">
+        <div class="jwd">
+            <p>Theme developed by Joanna Żelek & Spółdzielnia Kreatura</p>
         </div>
-    </div>
+        <div class="white-text jwd">
+            <p><a href="http://getgrav.org">Grav</a> was <a href="" uk-icon="icon: code"></a> with <a href="" uk-icon="icon: heart"></a> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+        </div>
+        </div>
+        </div>
 {% endblock %}
 
 </body>
+<script type='text/javascript' src='{{ url('plugin://simplesearch/js/simplesearch.js') }}'></script>
 </html>
