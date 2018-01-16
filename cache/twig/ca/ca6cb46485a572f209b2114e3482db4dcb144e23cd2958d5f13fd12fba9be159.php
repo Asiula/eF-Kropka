@@ -59,7 +59,7 @@ class __TwigTemplate_3ba4572e33abc5a5ab22950a4c3cb748e8853df8c95c151aa0b4983ac04
         // line 16
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["config"] ?? null), "plugins", array()), "simplesearch", array()), "display_button", array())) {
             // line 17
-            echo "            <button type=\"submit\" class=\"search-submit\">
+            echo "            <button type=\"submit\" class=\"search-submit uk-button-small\">
             <span uk-icon=\"icon: search\"></span>
             </button>
         ";
@@ -111,7 +111,7 @@ class __TwigTemplate_3ba4572e33abc5a5ab22950a4c3cb748e8853df8c95c151aa0b4983ac04
             data-search-input=\"{{ base_url }}{{ config.plugins.simplesearch.route == '@self' ? '' : (config.plugins.simplesearch.route == '/' ? '' : config.plugins.simplesearch.route) }}/query\"
         />
         {% if config.plugins.simplesearch.display_button %}
-            <button type=\"submit\" class=\"search-submit\">
+            <button type=\"submit\" class=\"search-submit uk-button-small\">
             <span uk-icon=\"icon: search\"></span>
             </button>
         {% endif %}

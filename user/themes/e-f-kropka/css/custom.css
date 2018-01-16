@@ -199,6 +199,13 @@ nav{
     margin-top: auto;
     transform: matrix(1,0,-0.5,1,-10,0);
 }
+.main-nav{
+    border-top: black solid 1px;
+}
+#body{
+    border-top: black solid 1px;
+    border-bottom: black solid 2px;
+}
 title{
     color: white;
     align-self: left;
@@ -275,6 +282,10 @@ div.jwd > p > a{
 #searchID{
     width: 35%;
 }
+.search-input{
+    border: black solid 2px;
+    padding: 2px;
+}
 /* blog_item css */
 em{
     margin-left:1vh;
@@ -312,6 +323,9 @@ align-self: flex-start;
     #text{
         width:auto;
     }
+    .home-main{
+        align-items: center;
+    }
 }
 @media(max-width: 850px){
     #text{
@@ -334,7 +348,7 @@ align-self: flex-start;
         width: 100%;
     }
 }
-@media(max-width: 500px)
+@media(max-width: 1100px)
 {
     .logo-wrapper{
         flex-direction:column;
@@ -355,5 +369,8 @@ align-self: flex-start;
 @media screen and (min-width: 1100px) {
     #uk-toggle{
         display: none !important;
+    }
+    #text{
+        width: auto;
     }
 }

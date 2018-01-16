@@ -1,5 +1,5 @@
 ---
-title: Wydażenia
+title: Wydarzenia
 content:
     items: '@self.children'
     limit: 5

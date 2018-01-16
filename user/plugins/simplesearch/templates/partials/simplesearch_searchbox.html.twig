@@ -14,7 +14,7 @@
             data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route == '@self' ? '' : (config.plugins.simplesearch.route == '/' ? '' : config.plugins.simplesearch.route) }}/query"
         />
         {% if config.plugins.simplesearch.display_button %}
-            <button type="submit" class="search-submit">
+            <button type="submit" class="search-submit uk-button-small">
             <span uk-icon="icon: search"></span>
             </button>
         {% endif %}
