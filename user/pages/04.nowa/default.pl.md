@@ -1,0 +1,8 @@
+---
+title: Staże
+---
+
+Prowadzimy program staży dla osób po doświadczeniach kryzysów psychicznych.
+Nasze staże prowadzimy obecnie we współpracy ze znanymi restauratorami – rodzeństwem Agnieszką i Marcinem Kręglickimi. Beneficjenci mogą pod okiem doświadczonych pracowników restauracji odbywać praktyki w zawodach związanych z gastronomią (kucharze, kelnerzy, menagerowie).
+
+Tak więc jedną grupą docelową naszych działań są osoby po doświadczeniu psychozy - stażyści, którym chcemy pomóc w zdrowieniu, a drugą personel restauracji - osoby szkolące, z którymi pracujemy nad nawiązaniem pozytywnych relacji z podopiecznymi i nad zmianą stereotypu chorego psychicznie. Wyjątkowość i innowacyjność tego projektu polega na włączeniu biznesu społecznie zaangażowanego do integracji osób z doświadczeniem poważnej choroby. Sukces tego przedsięwzięcia może, w pewnej części, przeciwdziałać stygmatyzacji i wykluczaniu osób po kryzysie zdrowia psychicznego, co jest głównym celem naszej fundacji.
