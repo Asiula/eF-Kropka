@@ -30,7 +30,7 @@ class __TwigTemplate_8564f96c35265784fd2c9f7d10207885a5d3f6a7e90c62eb98a135236f1
         // line 5
         if (($context["plugin_slug"] ?? null)) {
             // line 6
-            $context["installing"] = (is_string($__internal_8cabc97ff2cf4adc5c8b24c01e51495537907b049704977d57f2255a5f18e16e = ($context["plugin_slug"] ?? null)) && is_string($__internal_3747f80a366c906ff8d4c677118d9be5418ac1518118bc01f75252bcfa9a9ed5 = "install") && ('' === $__internal_3747f80a366c906ff8d4c677118d9be5418ac1518118bc01f75252bcfa9a9ed5 || 0 === strpos($__internal_8cabc97ff2cf4adc5c8b24c01e51495537907b049704977d57f2255a5f18e16e, $__internal_3747f80a366c906ff8d4c677118d9be5418ac1518118bc01f75252bcfa9a9ed5)));
+            $context["installing"] = (is_string($__internal_5a3749dfd7533239849969daab4949ac707824e65a517cad7d33d5649472f9fd = ($context["plugin_slug"] ?? null)) && is_string($__internal_73d138fb4d50bd351914d0c55f846a0ecb1b139f768b7e3a5187c3cba325f473 = "install") && ('' === $__internal_73d138fb4d50bd351914d0c55f846a0ecb1b139f768b7e3a5187c3cba325f473 || 0 === strpos($__internal_5a3749dfd7533239849969daab4949ac707824e65a517cad7d33d5649472f9fd, $__internal_73d138fb4d50bd351914d0c55f846a0ecb1b139f768b7e3a5187c3cba325f473)));
             // line 8
             if (($context["installing"] ?? null)) {
                 // line 9

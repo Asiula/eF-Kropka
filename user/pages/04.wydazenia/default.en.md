@@ -1,5 +1,0 @@
----
-title: Wydażenia
----
-
-news

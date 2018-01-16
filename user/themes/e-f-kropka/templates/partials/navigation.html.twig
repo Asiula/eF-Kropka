@@ -22,7 +22,9 @@
     {% endfor %}
 {% endmacro %}
 <nav class="main-nav">
-<ul>
+
+<li uk-toggle="target: #nav-ul" type="button" class="uk-button" id="uk-toggle">Menu</li>
+    <ul id="nav-ul">
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}

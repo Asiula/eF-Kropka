@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1512130124,
-    'checksum' => '5afab7cf3234607bc36ebde15adbf36b',
+    'timestamp' => 1513097783,
+    'checksum' => '36c144bfc35a72e739ba832c4c7d54b8',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
@@ -70,6 +70,14 @@ return [
             'plugins/social-feed' => [
                 'file' => 'user/plugins/social-feed/blueprints.yaml',
                 'modified' => 1511874991
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/blueprints.yaml',
+                'modified' => 1512132297
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/plugins/breadcrumbs/blueprints.yaml',
+                'modified' => 1512132332
             ]
         ]
     ],
@@ -3860,6 +3868,168 @@ return [
                 'underline' => true,
                 'name' => 'plugins.social-feed.instagram',
                 'validation' => 'strict'
+            ],
+            'plugins.pagination' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.pagination.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.pagination.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.pagination.delta' => [
+                'type' => 'text',
+                'size' => 'x-small',
+                'label' => 'Delta',
+                'default' => 0,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 0
+                ],
+                'name' => 'plugins.pagination.delta',
+                'validation' => 'strict'
+            ],
+            'plugins.pagination.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.pagination.built_in_css',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.breadcrumbs.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.show_all' => [
+                'type' => 'toggle',
+                'label' => 'Show even with one item',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.show_all',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.built_in_css',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.include_home' => [
+                'type' => 'toggle',
+                'label' => 'Include Home',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.include_home',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.include_current' => [
+                'type' => 'toggle',
+                'label' => 'Include Current Page',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.include_current',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.icon_home' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Icon Home',
+                'default' => '',
+                'name' => 'plugins.breadcrumbs.icon_home',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.icon_divider_classes' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Icon Divider Classes',
+                'default' => 'fa fa-angle-right',
+                'name' => 'plugins.breadcrumbs.icon_divider_classes',
+                'validation' => 'strict'
+            ],
+            'plugins.breadcrumbs.link_trailing' => [
+                'type' => 'toggle',
+                'label' => 'Link Trailing',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.breadcrumbs.link_trailing',
+                'validation' => 'strict'
             ]
         ],
         'rules' => [
@@ -4307,6 +4477,21 @@ return [
                     'instagram_feeds' => [
                         'username' => 'plugins.social-feed.instagram_feeds.username'
                     ]
+                ],
+                'pagination' => [
+                    'enabled' => 'plugins.pagination.enabled',
+                    'delta' => 'plugins.pagination.delta',
+                    'built_in_css' => 'plugins.pagination.built_in_css'
+                ],
+                'breadcrumbs' => [
+                    'enabled' => 'plugins.breadcrumbs.enabled',
+                    'show_all' => 'plugins.breadcrumbs.show_all',
+                    'built_in_css' => 'plugins.breadcrumbs.built_in_css',
+                    'include_home' => 'plugins.breadcrumbs.include_home',
+                    'include_current' => 'plugins.breadcrumbs.include_current',
+                    'icon_home' => 'plugins.breadcrumbs.icon_home',
+                    'icon_divider_classes' => 'plugins.breadcrumbs.icon_divider_classes',
+                    'link_trailing' => 'plugins.breadcrumbs.link_trailing'
                 ]
             ]
         ],

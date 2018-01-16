@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/srv/http/grav/user/accounts/asia.yaml',
-    'modified' => 1511281200,
+    'modified' => 1516112258,
     'data' => [
         'email' => 'mad15@o2.pl',
         'fullname' => 'Joanna',
@@ -10,13 +10,19 @@ return [
         'state' => 'enabled',
         'access' => [
             'admin' => [
-                'login' => true,
-                'super' => true
+                'super' => 'true',
+                'login' => 'true'
             ],
             'site' => [
-                'login' => true
+                'login' => 'true'
             ]
         ],
-        'hashed_password' => '$2y$10$K5a3iHFJiGwGuGq7FfYVtut1I/TUOSaSEkhGQ3TNkpJ8yYTa2gbba'
+        'hashed_password' => '$2y$10$S0YU2b72RYFv.BCDf97TSO7gkW.0GTOmxm8/CXhMvV5QmWxyf3UnC',
+        'language' => 'en',
+        'login_attempts' => [
+            
+        ],
+        'twofa_secret' => 'K7JYWON6NDQEU2RWYPXLDKKUOSA5ORSE',
+        'twofa_enabled' => false
     ]
 ];

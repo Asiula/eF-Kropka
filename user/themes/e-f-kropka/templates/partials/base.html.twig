@@ -33,21 +33,18 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-        <div class="header uk-background-primary uk-flex uk-flex-column uk-flex-center">
+        <div class="header color-primary-4 uk-flex uk-flex-column uk-flex-center">
             <div class="logo-wrapper uk-flex-row">
                 <div>
             <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
                 <div class="logo">
-                    <img alt="logo eF Kropka" src="{{url('theme://images/logo_FB_feed.png')}}" id="eflogo"/>
+                    <img alt="logo eF Kropka" src="{{url('theme://images/eflogo.svg')}}" id="eflogo"/>
                 </div>
             </a>
-            <h3 class=" white-text uk-margin-right">
-                {{ config.site.title }}
-            </h3>
             </div>
 
-            <div class="white-text uk-flex-bottom uk-flex-center" id="text"">
-                <p>
+            <div class="white-text uk-flex-bottom uk-flex-center" id="text">
+                <p id="text">
                     Przeciwdziałamy stygmatyzacji osób po kryzysie psychicznym
                 </p>
             </div>
@@ -58,7 +55,7 @@
             </div>
                         </div>
             {% block header_navigation %}
-                <div class="nav-wrapper">
+                <div class="nav-wrapper color-secondary-2-4">
                     {% include 'partials/navigation.html.twig' %}
                     </div>
             {% endblock %}
@@ -73,7 +70,7 @@
     </section>
 {% endblock %}
 {% block footer %}
-    <div class="footer uk-flex uk-flex-right uk-flex-middle">
+    <div class="footer color-primary-4 uk-flex uk-flex-right uk-flex-middle">
         <div class="white-text uk-flex-column">
         <div class="jwd">
             <p>Theme developed by Joanna Żelek & Spółdzielnia Kreatura</p>

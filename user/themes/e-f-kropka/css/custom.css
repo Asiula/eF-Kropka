@@ -1,8 +1,9 @@
+@import 'color-scheme3.css';
+
+
+
 /* Core Stuff */
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     display: flex;
     margin:0;
     padding: 0px;
@@ -15,7 +16,7 @@ html,body
     overflow-x: hidden;
 }
 body {
-    font-size: 1rem;
+    font-size: 2vh;
     line-height: 1.7;
     color: #606d6e;
     flex-direction: column;
@@ -25,24 +26,14 @@ body {
     min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #454B4D;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
+/* a {
+   color: white;
+   text-decoration: none;
+   } */
 
 a:hover {
     color: #175E91;
     font-style: bold;
-    font-size: 125%;
     text-decoration: none;
 }
 
@@ -206,7 +197,6 @@ nav{
     align-self: flex-end;
     width: auto;
     margin-top: auto;
-    background-color: #FFC217;
     transform: matrix(1,0,-0.5,1,-10,0);
 }
 title{
@@ -221,7 +211,10 @@ title{
 }
 .logo{
     align-items: flex-start;
-    margin-right: 0vh;
+    margin-left: 5vh;
+}
+img{
+    margin: 2vh;
 }
 #eflogo{
     max-width: 50%;
@@ -237,12 +230,12 @@ div.wrapper.padding{
     margin-top:auto;
 }
 #text{
-    width: 35%;
+    width: 70vh;
+    font-size: 2vh;
 }
 
 
 .footer{
-    background-color: #0098CC;
     min-height: 5%;
 }
 .white-text{
@@ -267,10 +260,13 @@ div.jwd > p > a{
 #langSelectorList a{
     color:black;
 }
+.uk-button{
+    color: #f1f1f1 !important;
+}
 .search-wrapper{
     align-self:end;
-    height: 35%;
-    margin-right:5%;
+    height: 5vh;
+    margin: 5vh;
 }
 .search{
     justify-content: center;
@@ -279,20 +275,47 @@ div.jwd > p > a{
 #searchID{
     width: 35%;
 }
+/* blog_item css */
+em{
+    margin-left:1vh;
+}
+
+.p-summary{
+align-self: flex-start;
+}
 
 /* media queries */
 
-@media(max-width: 990px)
+@media(max-width: 1100px)
 {
     div.wrapper.padding{
         align-items: center;
         width: auto;
     }
+    #uk-toggle{
+        display: inline-block;
+    }
+    .main-nav{
+        flex-direction:column;
+        transform:none;
+        width:100vw;
+    }
+    nav ul{
+        flex-direction:column;
+    }
+    .nav-wrapper{
+        transform:none;
+    }
+    #eflogo{
+        width: 15vh;
+    }
+    #text{
+        width:auto;
+    }
 }
 @media(max-width: 850px){
     #text{
         width: 100%;
-        font-size: x-small;
     }
 }
 @media(max-width: 700px)
@@ -309,5 +332,28 @@ div.jwd > p > a{
     .header {
         min-height: auto;
         width: 100%;
+    }
+}
+@media(max-width: 500px)
+{
+    .logo-wrapper{
+        flex-direction:column;
+        align-items:center;}
+    #text{
+        margin:3vw;
+        }
+    .list-item{
+        flex-direction:column;
+    }
+    .home-main{
+        flex-direction: column !important;
+    }
+    #kontakt{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1100px) {
+    #uk-toggle{
+        display: none !important;
     }
 }

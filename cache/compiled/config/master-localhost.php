@@ -1,13 +1,17 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1512130124,
-    'checksum' => '5cc6275253df0bb380f72c7c3c523bd9',
+    'timestamp' => 1513097783,
+    'checksum' => '0af0341f7f4ef37c54f7e492890c1206',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1511281125
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/config/plugins/breadcrumbs.yaml',
+                'modified' => 1512132629
             ],
             'plugins/facebook' => [
                 'file' => 'user/config/plugins/facebook.yaml',
@@ -15,7 +19,15 @@ return [
             ],
             'plugins/language-selector' => [
                 'file' => 'user/config/plugins/language-selector.yaml',
-                'modified' => 1511886819
+                'modified' => 1512130935
+            ],
+            'plugins/login' => [
+                'file' => 'user/config/plugins/login.yaml',
+                'modified' => 1512130995
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/config/plugins/pagination.yaml',
+                'modified' => 1512132564
             ],
             'plugins/simplesearch' => [
                 'file' => 'user/config/plugins/simplesearch.yaml',
@@ -39,7 +51,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1511874991
+                'modified' => 1512132332
             ]
         ],
         'system/config' => [
@@ -108,6 +120,14 @@ return [
             'plugins/social-feed' => [
                 'file' => 'user/plugins/social-feed/social-feed.yaml',
                 'modified' => 1511874991
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1512132297
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/plugins/breadcrumbs/breadcrumbs.yaml',
+                'modified' => 1512132332
             ]
         ]
     ],
@@ -205,7 +225,7 @@ return [
                         'login_after_registration' => true,
                         'send_activation_email' => false,
                         'send_notification_email' => false,
-                        'send_welcome_email' => false
+                        'send_welcome_email' => '0'
                     ]
                 ],
                 'rememberme' => [
@@ -215,7 +235,7 @@ return [
                 ],
                 'max_pw_resets_count' => 0,
                 'max_pw_resets_interval' => 60,
-                'max_login_count' => 0,
+                'max_login_count' => 3,
                 'max_login_interval' => 2
             ],
             'admin' => [
@@ -330,6 +350,21 @@ return [
             ],
             'social-feed' => [
                 'enabled' => true
+            ],
+            'pagination' => [
+                'enabled' => false,
+                'built_in_css' => true,
+                'delta' => 0
+            ],
+            'breadcrumbs' => [
+                'enabled' => true,
+                'show_all' => true,
+                'built_in_css' => true,
+                'include_home' => false,
+                'include_current' => true,
+                'icon_home' => '',
+                'icon_divider_classes' => 'fa fa-angle-right',
+                'link_trailing' => false
             ],
             'topicmenu' => [
                 'enabled' => false,

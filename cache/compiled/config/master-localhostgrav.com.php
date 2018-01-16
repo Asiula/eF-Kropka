@@ -1,13 +1,17 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1511886819,
-    'checksum' => '5cc6275253df0bb380f72c7c3c523bd9',
+    'timestamp' => 1516112381,
+    'checksum' => 'beefe68899d92661638a54ca8b5b07ff',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1511281125
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/config/plugins/breadcrumbs.yaml',
+                'modified' => 1516099054
             ],
             'plugins/facebook' => [
                 'file' => 'user/config/plugins/facebook.yaml',
@@ -15,7 +19,15 @@ return [
             ],
             'plugins/language-selector' => [
                 'file' => 'user/config/plugins/language-selector.yaml',
-                'modified' => 1511886819
+                'modified' => 1512130935
+            ],
+            'plugins/login' => [
+                'file' => 'user/config/plugins/login.yaml',
+                'modified' => 1512130995
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/config/plugins/pagination.yaml',
+                'modified' => 1512132564
             ],
             'plugins/simplesearch' => [
                 'file' => 'user/config/plugins/simplesearch.yaml',
@@ -39,25 +51,25 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1511874991
+                'modified' => 1516095744
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1511280072
+                'modified' => 1516112295
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1511280072
+                'modified' => 1516112295
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1511280072
+                'modified' => 1516112295
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1511280072
+                'modified' => 1516112295
             ]
         ],
         'user/plugins' => [
@@ -72,22 +84,6 @@ return [
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
                 'modified' => 1511280072
-            ],
-            'plugins/form' => [
-                'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1511280133
-            ],
-            'plugins/email' => [
-                'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1511280139
-            ],
-            'plugins/login' => [
-                'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1511280143
-            ],
-            'plugins/admin' => [
-                'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1511280156
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/devtools.yaml',
@@ -108,6 +104,30 @@ return [
             'plugins/social-feed' => [
                 'file' => 'user/plugins/social-feed/social-feed.yaml',
                 'modified' => 1511874991
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1512132297
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/plugins/breadcrumbs/breadcrumbs.yaml',
+                'modified' => 1512132332
+            ],
+            'plugins/login' => [
+                'file' => 'user/plugins/login/login.yaml',
+                'modified' => 1516112356
+            ],
+            'plugins/form' => [
+                'file' => 'user/plugins/form/form.yaml',
+                'modified' => 1516112360
+            ],
+            'plugins/admin' => [
+                'file' => 'user/plugins/admin/admin.yaml',
+                'modified' => 1516112369
+            ],
+            'plugins/email' => [
+                'file' => 'user/plugins/email/email.yaml',
+                'modified' => 1516112381
             ]
         ]
     ],
@@ -133,6 +153,128 @@ return [
                 'enabled' => true,
                 'built_in_css' => true
             ],
+            'devtools' => [
+                'enabled' => true
+            ],
+            'language-selector' => [
+                'enabled' => true,
+                'built_in_css' => false,
+                'untranslated_pages_behavior' => 'none',
+                'button_display' => 'name',
+                'select_display' => 'default'
+            ],
+            'facebook' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'use_unitegallery_plugin' => true,
+                'facebook_page_settings' => [
+                    'section_title' => 'News',
+                    'page_name' => 'eF Kropka',
+                    'page_id' => '399188573480541',
+                    'date_format' => 'd.m.Y - H:i',
+                    'count' => 1
+                ],
+                'facebook_event_settings' => [
+                    'show_cover' => true,
+                    'count' => 7
+                ],
+                'facebook_album_settings' => [
+                    'use_unitegallery' => false,
+                    'unitegallery_theme' => 'default'
+                ],
+                'facebook_common_settings' => [
+                    'application_id' => '539597739724105',
+                    'application_secret' => '68fabcee884f416ce054006da3be6424'
+                ]
+            ],
+            'simplesearch' => [
+                'enabled' => true,
+                'built_in_css' => false,
+                'display_button' => true,
+                'min_query_length' => 3,
+                'route' => '/search',
+                'search_content' => 'rendered',
+                'template' => 'simplesearch_results',
+                'filters' => [
+                    'category' => NULL
+                ],
+                'filter_combinator' => 'and',
+                'ignore_accented_characters' => false,
+                'order' => [
+                    'by' => 'date',
+                    'dir' => 'desc'
+                ]
+            ],
+            'social-feed' => [
+                'enabled' => true
+            ],
+            'pagination' => [
+                'enabled' => false,
+                'built_in_css' => true,
+                'delta' => 0
+            ],
+            'breadcrumbs' => [
+                'enabled' => true,
+                'show_all' => true,
+                'built_in_css' => false,
+                'include_home' => false,
+                'include_current' => true,
+                'icon_home' => '',
+                'icon_divider_classes' => 'fa fa-angle-right',
+                'link_trailing' => false
+            ],
+            'login' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'route' => NULL,
+                'redirect_to_login' => true,
+                'redirect_after_login' => NULL,
+                'route_activate' => '/activate_user',
+                'route_forgot' => '/forgot_password',
+                'route_reset' => '/reset_password',
+                'route_profile' => '/user_profile',
+                'route_register' => '/user_register',
+                'route_unauthorized' => '/user_unauthorized',
+                'dynamic_page_visibility' => false,
+                'parent_acl' => false,
+                'protect_protected_page_media' => false,
+                'rememberme' => [
+                    'enabled' => true,
+                    'timeout' => 604800,
+                    'name' => 'grav-rememberme'
+                ],
+                'max_pw_resets_count' => 0,
+                'max_pw_resets_interval' => 60,
+                'max_login_count' => 3,
+                'max_login_interval' => 2,
+                'user_registration' => [
+                    'enabled' => true,
+                    'fields' => [
+                        0 => 'username',
+                        1 => 'password',
+                        2 => 'email',
+                        3 => 'fullname',
+                        4 => 'title'
+                    ],
+                    'default_values' => [
+                        'level' => 'Newbie'
+                    ],
+                    'access' => [
+                        'site' => [
+                            'login' => 'true'
+                        ]
+                    ],
+                    'redirect_after_registration' => '',
+                    'options' => [
+                        'validate_password1_and_password2' => true,
+                        'set_user_disabled' => false,
+                        'login_after_registration' => true,
+                        'send_activation_email' => false,
+                        'send_notification_email' => false,
+                        'send_welcome_email' => '0'
+                    ]
+                ]
+            ],
             'form' => [
                 'enabled' => true,
                 'built_in_css' => true,
@@ -148,75 +290,6 @@ return [
                         0 => 'image/*'
                     ]
                 ]
-            ],
-            'email' => [
-                'enabled' => true,
-                'from' => NULL,
-                'from_name' => NULL,
-                'to' => NULL,
-                'to_name' => NULL,
-                'mailer' => [
-                    'engine' => 'sendmail',
-                    'smtp' => [
-                        'server' => 'localhost',
-                        'port' => 25,
-                        'encryption' => 'none',
-                        'user' => '',
-                        'password' => ''
-                    ],
-                    'sendmail' => [
-                        'bin' => '/usr/sbin/sendmail -bs'
-                    ]
-                ],
-                'content_type' => 'text/html',
-                'debug' => false
-            ],
-            'login' => [
-                'enabled' => true,
-                'built_in_css' => true,
-                'route' => NULL,
-                'redirect_to_login' => true,
-                'redirect_after_login' => NULL,
-                'route_activate' => '/activate_user',
-                'route_forgot' => '/forgot_password',
-                'route_reset' => '/reset_password',
-                'route_profile' => '/user_profile',
-                'route_register' => '/user_register',
-                'route_unauthorized' => '/user_unauthorized',
-                'parent_acl' => false,
-                'protect_protected_page_media' => false,
-                'user_registration' => [
-                    'enabled' => true,
-                    'fields' => [
-                        0 => 'username',
-                        1 => 'password',
-                        2 => 'email',
-                        3 => 'fullname',
-                        4 => 'title'
-                    ],
-                    'access' => [
-                        'site' => [
-                            'login' => 'true'
-                        ]
-                    ],
-                    'options' => [
-                        'validate_password1_and_password2' => true,
-                        'set_user_disabled' => false,
-                        'login_after_registration' => true,
-                        'send_activation_email' => false,
-                        'send_notification_email' => false,
-                        'send_welcome_email' => false
-                    ]
-                ],
-                'rememberme' => [
-                    'enabled' => true,
-                    'timeout' => 604800,
-                    'name' => 'grav-rememberme'
-                ],
-                'max_pw_resets_count' => 0,
-                'max_pw_resets_interval' => 60,
-                'max_login_count' => 0,
-                'max_login_interval' => 2
             ],
             'admin' => [
                 'enabled' => true,
@@ -276,60 +349,27 @@ return [
                     ]
                 ]
             ],
-            'devtools' => [
-                'enabled' => true
-            ],
-            'language-selector' => [
+            'email' => [
                 'enabled' => true,
-                'built_in_css' => false,
-                'untranslated_pages_behavior' => 'none',
-                'button_display' => 'name',
-                'select_display' => 'default'
-            ],
-            'facebook' => [
-                'enabled' => true,
-                'built_in_css' => true,
-                'use_unitegallery_plugin' => true,
-                'facebook_page_settings' => [
-                    'section_title' => 'News',
-                    'page_name' => 'eF Kropka',
-                    'page_id' => '399188573480541',
-                    'date_format' => 'd.m.Y - H:i',
-                    'count' => 1
+                'from' => NULL,
+                'from_name' => NULL,
+                'to' => NULL,
+                'to_name' => NULL,
+                'mailer' => [
+                    'engine' => 'sendmail',
+                    'smtp' => [
+                        'server' => 'localhost',
+                        'port' => 25,
+                        'encryption' => 'none',
+                        'user' => '',
+                        'password' => ''
+                    ],
+                    'sendmail' => [
+                        'bin' => '/usr/sbin/sendmail -bs'
+                    ]
                 ],
-                'facebook_event_settings' => [
-                    'show_cover' => true,
-                    'count' => 7
-                ],
-                'facebook_album_settings' => [
-                    'use_unitegallery' => false,
-                    'unitegallery_theme' => 'default'
-                ],
-                'facebook_common_settings' => [
-                    'application_id' => '539597739724105',
-                    'application_secret' => '68fabcee884f416ce054006da3be6424'
-                ]
-            ],
-            'simplesearch' => [
-                'enabled' => true,
-                'built_in_css' => false,
-                'display_button' => true,
-                'min_query_length' => 3,
-                'route' => '/search',
-                'search_content' => 'rendered',
-                'template' => 'simplesearch_results',
-                'filters' => [
-                    'category' => NULL
-                ],
-                'filter_combinator' => 'and',
-                'ignore_accented_characters' => false,
-                'order' => [
-                    'by' => 'date',
-                    'dir' => 'desc'
-                ]
-            ],
-            'social-feed' => [
-                'enabled' => true
+                'content_type' => 'text/html',
+                'debug' => false
             ],
             'topicmenu' => [
                 'enabled' => false,
@@ -661,9 +701,11 @@ return [
             'wrapped_site' => false,
             'reverse_proxy_setup' => false,
             'force_ssl' => false,
+            'force_lowercase_urls' => true,
             'custom_base_url' => '',
             'username_regex' => '^[a-z0-9_-]{3,16}$',
             'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
+            'intl_enabled' => true,
             'languages' => [
                 'supported' => [
                     0 => 'en',
